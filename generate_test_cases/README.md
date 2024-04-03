@@ -42,8 +42,7 @@ Make sure to set the python interpreter in your IDE to the one now in `<project_
 
 
 ## Get an Open AI API Key.
-Visit the signup page for the [Open AI Platform](https://platform.openai.com/signup) to sign up. Once you have the API_KEY, create a .env file and enter: 
-OPENAI_API_KEY=<your-openai-key>
+Visit the signup page for the [Open AI Platform](https://platform.openai.com/signup) to sign up. Once you have the API_KEY, update the OPENAI_API_KEY in the existing .env file
 
 
 # Run the app
