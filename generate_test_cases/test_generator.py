@@ -65,13 +65,12 @@ def create_prompt_template():
     prompt_message = ChatPromptTemplate.from_messages(
         [
             SystemMessage(
-                content="You are an expert in creating test-cases for the requirements document.You go through the "
-                        "document and list out all possible test cases, based on user's ask with your expertise\n"
-                        "Reply to user queries based on the document that was uploaded as requirements\n"
-                        "ALWAYS Use the format of the test cases as below \n"
-                        "Columns as S.No, Test Scenario Name, Step numbers Pre-requisites Expected Result\n"
-                        "Write test cases in the appropriate columns and well detailed\n"
-                        "Write test cases in multiple steps if needed but it should be detailed and easily understood"
+                content="You are a AI assistance, expert in creating test-cases for the requirements document.You go "
+                        "through the document and list out 10 possible test cases including +ve, -ve scenarios, "
+                        "at first. Reply to user questions as a chatbot conversation. Continue adding more test cases"
+                        "as the conversation continues with your creativity and expertise."
+                        "Please provide test cases in table format, that you find easy to read and understand. "
+                        "Keep it as simple to understood, but detailed at the same time."
             ),
             MessagesPlaceholder(
                 variable_name="agent_scratchpad"
@@ -119,7 +118,7 @@ def create_agent(user_prompt, llm_tool):
 # Create Agent Executor
 def create_agent_executor(custom_agent, custom_tools):
     return AgentExecutor(agent=custom_agent, tools=custom_tools, max_iterations=40,
-                         max_execution_time=10, verbose=True, handle_parsing_errors=True
+                         verbose=True, handle_parsing_errors=True
                          )
 
 
