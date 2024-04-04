@@ -161,7 +161,7 @@ def start_conversation(history_chain):
 st.set_page_config(page_title="Create Test Cases")
 st.title("Test Cases Generator")
 """
-A basic test cases generator app based on the uploaded requirement document uploaded.\n
+A basic test cases generator app based on the uploaded requirement PDF document uploaded.\n
 It can answer questions on Test Data Techniques like BVA, Equivalence with examples.
 It can provide some test data examples, as well.\n
 Find it yourself!
@@ -170,7 +170,7 @@ with st.sidebar:
     st.header("Requirement Document")
     pdf = st.file_uploader("Upload Acceptance Criteria document here")
 if pdf is None:
-    st.info("Upload a Requirement Document to continue")
+    st.info("Upload a Requirement Document in PDF format to continue")
 else:
     load_dotenv()
     documents = load_pdf_docs(pdf)
