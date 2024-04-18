@@ -1,4 +1,4 @@
-# Test Cases Generator
+# Hacker News
 
 This uses python streamlit library as web-ui interface and lets the user upload the requirement document. 
 Based on the requirement document uploaded, user is able to query the llm model to generate test cases for the system under test. 
